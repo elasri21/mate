@@ -1,0 +1,150 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1111;
+    background-color: transparent;
+    padding: 15px 0;
+    height: 83px;
+    transition: .3s;
+    .container {
+        position: relative;
+        .logo {
+            a {
+                display: block;
+                font-size: 35px;
+                font-weight: 600;
+                color: $main-c;
+                text-transform: uppercase;
+            }
+        }
+        nav {
+            @media(min-width: 922px) {
+                display: block !important;
+                ul {
+                    align-items: center;
+                    gap: 20px !important;
+                    li {
+                        a {
+                            display: block;
+                            color: $white;
+                            &:not(.active):hover {
+                                color: $main-c;
+                            }
+                            &.active {
+                                background-color: $main-c;
+                                width: fit-content;
+                                padding: 6px 20px;
+                                border-radius: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: 921px) {
+                position: absolute;
+                top: calc(100% + 15px);
+                left: 0;
+                right: 0;
+                ul {
+                    flex-direction: column;
+                    background-color: $white;
+                    li {
+                        a {
+                            display: block;
+                            padding: 10px 20px;
+                            color: $default-c;
+                            &:hover {
+                                color: $main-c;
+                            }
+                            &.active {
+                                background-color: $main-c;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            display: none;
+            ul {
+                display: flex;
+                li {
+                    a {
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+        .toggle-nav {
+            @media (min-width: 922px) {
+                display: none !important;
+            }
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            span {
+                position: absolute;
+                left: 0;
+                width: 30px;
+                height: 2px;
+                background-color: $white;
+                transition: .3s;
+                &.bar-1 {
+                    top: 5px;
+                }
+                &.bar-2 {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &.bar-3 {
+                    bottom: 5px;
+                }
+            }
+            &.clicked {
+                span {
+                    &.bar-1 {
+                        transform: rotate(45deg);
+                        top: 14px;
+                    }
+                    &.bar-2 {
+                        opacity: 0;
+                    }
+                    &.bar-3 {
+                        transform: rotate(-45deg);
+                        bottom: 14px;
+                    }
+                }
+            }
+        }
+    }
+    &.white-bg {
+        background-color: $white;
+        box-shadow: 0 1px 1px $b-f1;
+        .container {
+            nav {
+                @media(min-width: 922px) {
+                    ul {
+                        li {
+                            a {
+                                color: $default-c;
+                                &.active {
+                                    background-color: $main-c;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .toggle-nav {
+                span {
+                    background-color: $footer-bg;
+                }
+            }
+        }
+    }
+}

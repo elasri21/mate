@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $white;
+    font-family: $family;
+    color: $default-c;
+    font-size: $size;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+p {
+    line-height: 1.6;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+    background: none;
+    transition: .3s;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.container {
+    @media (min-width: 1200px) {
+        margin: 0 100px !important;
+    }
+    @media (min-width: 922px) and (max-width: 1199px) {
+        margin: 0 70px !important;
+    }
+    @media (min-width: 768px) and (max-width: 921px) {
+        margin: 0 50px !important;
+    }
+    margin: 0 25px;
+}
+
+.pattern {
+    margin-bottom: 30px;
+    h2 {
+        font-size: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .line {
+        width: 65px;
+        height: 2px;
+        background-color: $main-c;
+        margin: 20px auto;
+    }
+    p {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.btn-shape {
+    display: block;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 400;
+    border: 2px solid $main-c;
+    color: $main-c;
+}
+
+.c-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-c {
+    display: flex;
+    align-items: center;
+}
+.align-s {
+    display: flex;
+    align-items: flex-start;
+}
+.btw-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.grid-250 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.grid-300 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
